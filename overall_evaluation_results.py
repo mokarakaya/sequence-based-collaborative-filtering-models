@@ -4,7 +4,7 @@ import csv
 def generate_overall_results():
     datasets = ['Movielens1M', 'yoochoose_buys']
     cell_names = ['BasicRNNCell', 'LSTMCell', 'GRUCell', 'DBAM', 'LSTMCellDiversity']
-    metrics = ['recall', 'diversity', 'aggregate_diversity', 'unexpectedness', 'novelty']
+    metrics = ['recall', 'mrr', 'diversity', 'aggregate_diversity', 'unexpectedness', 'novelty']
     with open('overall_evaluation_results.csv', 'w') as csvfile:
         writer = csv.writer(csvfile)
         for dataset in datasets:
