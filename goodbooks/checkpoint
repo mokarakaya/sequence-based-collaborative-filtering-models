@@ -1,2 +1,2 @@
-model_checkpoint_path: "BasicRNNCell.ckpt"
-all_model_checkpoint_paths: "BasicRNNCell.ckpt"
+model_checkpoint_path: "LSTMCellDiversity.ckpt"
+all_model_checkpoint_paths: "LSTMCellDiversity.ckpt"

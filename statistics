@@ -1,0 +1,27 @@
+Movielens1M
+number of actions: 100000
+number of items: 1683
+number of users: 944
+number of sequences: 96228
+sequence lengths histogram: [ 4715  9430  8390  6958  6096  5366  4752  4300  3975 42246]
+
+yoochoose_buys
+number of actions: 1150753
+number of items: 19950
+number of users: 509697
+number of sequences: 131894
+sequence lengths histogram: [112007  17353   1666    422    159     85     58     36     22     86]
+
+yoochoose_clicks
+number of actions: 33003943
+number of items: 52740
+number of users: 9249730
+number of sequences: 8513691
+sequence lengths histogram: [5509780 2173351  481393  168626   75255   39492   22506   13384    8509    21395]
+
+goodbooks
+number of actions: 5976479
+number of items: 10001
+number of users: 53425
+number of sequences: 5762783
+sequence lengths histogram: [ 267120  534240  533806  530980  527526  523091  516462  501177  470827  1357554]
