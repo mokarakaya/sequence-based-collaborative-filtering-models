@@ -1,2 +1,2 @@
-model_checkpoint_path: "LSTMCellDiversity.ckpt"
-all_model_checkpoint_paths: "LSTMCellDiversity.ckpt"
+model_checkpoint_path: "GRUCell1.ckpt"
+all_model_checkpoint_paths: "GRUCell1.ckpt"

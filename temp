@@ -1,0 +1,3 @@
+novelty_plot = df_novelty.plot.line()
+novelty_plot.set_ylabel('Novelty')
+novelty_plot.set_xlabel('Session Length')
