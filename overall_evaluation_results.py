@@ -2,9 +2,10 @@ import csv
 
 
 def generate_overall_results():
-    datasets = ['Movielens1M', 'yoochoose_buys', 'goodbooks']
-    cell_names = ['BasicRNNCell', 'LSTMCell', 'GRUCell', 'DBAM', 'LSTMCellDiversity']
-    metrics = ['recall', 'mrr', 'diversity', 'aggregate_diversity', 'unexpectedness', 'novelty']
+    # datasets = ['Movielens1M', 'yoochoose_buys', 'goodbooks']
+    datasets = ['yoochoose_clicks']
+    cell_names = ['BasicRNNCell', 'LSTMCell', 'GRUCell', 'GRU4Rec', 'DBAM', 'LSTMCellDiversity']
+    metrics = ['precision', 'recall', 'mrr', 'diversity', 'aggregate_diversity', 'unexpectedness', 'novelty']
     with open('overall_evaluation_results.csv', 'w') as csvfile:
         writer = csv.writer(csvfile)
         for dataset in datasets:

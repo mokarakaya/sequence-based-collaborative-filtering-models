@@ -1,0 +1,61 @@
+Evaluation of Session-based Recommendation Algorithms:
+- Investigated Methods:
+Baseline Methods: Simple Association Rules (AR), first-order Markov Chain (MC), Sequential Rules (SR). They all use the last item in sequence to make prediction. Additionally, Bayesian Personalized Ranking (BPR-MF) is another baseline method.
+Nearest Neighbors: Item-based kNN (IKNN), Session-based kNN (SKNN), Sequence-Aware Extentions (V-SKNN, S-SKNN, SF-SKNN)
+Neural Networks: GRU4REC
+Factorization-based Methods: Factorized Personalized Markov Chains (FPMC), Factorized Item Similarity Models (FISM), Factorized Sequential Prediction with Item Similarity Models (FOSSIL), Session-based Matrix Factorization (SMF)
+
+- Selection of the Target Item and Accuracy Measures:
+Measures prediction accuracy in two ways;
+* First, predict the immediate next item given the first n elements. n is incremented iteratively. Hit rate (HR) and Mean Reciprocal Rank (MRR) is calculated.
+* Second, sessiondaki ilk n element ile prediction yapiliyor. Sessiondaki diger elementler ise precision, recall hesaplamasi icin kullaniliyor. Paperda n=20 uzerinden yorumlar yapilmis ama paperin sonunda n=5,10 icin elde edilen sonuclar da verilmis. 
+
+- Sessionization strategies:
+RSC15, Zalando -> Session zaten verilmis. Verilen sessionlar kullaniliyor.
+RETAILR, NOWPLAYING, 30MUSIC, CLEF -> 30 dakika altindaki ardisik actionlar ayni sessionda kabul ediliyor. Kullanici 30 dakikanin uzerinde inactive ise yeni bir session basliyor.
+TMALL -> Zaman acisindan sadece gun bilgisi bulundugu icin herbir gun yeni bir session olarak alinmis.
+AOTM, 8TRACKS -> Her bir playlist bir session olarak kabul ediliyor.
+
+- Training and Test Splits, Repeated Subsampling:
+Hidasi'nin paperinda datasetin son gunu test datasi, geri kalani ise train datasi olarak kullanilmis. Karsilastirma yapabilmek icin ayni yontemi uygulamamislar.
+Bunun yani sira, Hidasi'nin yonteminin (single-split setup) limitationlarinin oldugunu dusunduklerinden sliding-window protocol uygulamislar. Bu protocol'e gore esit gun sayilari barindiracak sekilde dataseti 5 esit parcaya bolmusler. Bu parcalarin son gunlerini yine test icin ayirmislar.
+8TRACKS ve AOTM datasetinde timestamp bulunmadigi icin train ve test datasetlerini randomly olusturmuslar.
+
+- Additional Quality Factors:
+Coverage (aggregate diversity), Popularity bias (noveltynin tersi), Cold start, scalability.
+
+- Parameter optimization:
+Random search kullanilmis. 
+
+
+
+Diversity Evaluation of Sequence-based Recommendation Algorithms:
+- Investigated Methods:
+All methods are sequence based neural networks.
+Baseline Methods: RNN, LSTM, GRU, 
+Advance Methods: GRU4REC
+Diversity Spesific Methods: LSTM with Diversity bias, DBAM, LSTM Mutation 2.
+
+- Selection of the Target Item and Accuracy Measures:
+Usteki paperda bahsedilen ikinci yonteme benzer bir yontem uyguluyoruz. Fakat biz son n itemi precision recall hesaplamak icin kullaniyoruz.
+Ornegin sequence [1,2,3,4,5,6,7,8,9,10] olsun. n ise 2 olsun.
+Diger paperda [1,2] prediction yapmak icin kullaniliyor ve [3,4,5,6,7,8,9,10] precision/recall hesaplamak icin kullaniliyor.
+Bizim setupimizda ise [1,2,3,4,5,6,7,8] prediction yapmak icin kullaniliyor ve [9,10] precision/recall hesaplamak icin kullaniliyor.
+Her zaman n=20 kullaniyoruz.
+
+- Sessionization strategies:
+Kullanicinin oylarinin tum subsetleri sequenceleri olusturuyor.
+Ornegin kullanicinin oylari sirasiyla [1,2,3,4,5] ise bu kullanici icin olusturulan sequenceler;
+[[1],[1,2],[1,2,3], [1,2,3,4], [1,2,3,4,5]] seklinde oluyor.
+Sequencelerin min ve max length degerleri var. (min=5, max=100)
+Session mantigini kullanmiyoruz.
+
+- Training and Test Splits, Repeated Subsampling:
+Test dataseti icin random kullanicilar seciliyor. Bu kullanicilarin tum sequenceleri (oylarin subsetleri) test datasetine ekleniyor.
+
+- Additional Quality Factors:
+Precision/recall ve MRR  yanisira individual diversity, coverage (aggregate diversity), popularity bias (novelty), unexpectedness.
+
+- Parameter optimization:
+Parameter optimization methodu kullanmiyoruz. Degerler manuel test ederek secildi (experimental)
+
