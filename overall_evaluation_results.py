@@ -2,10 +2,17 @@ import csv
 
 
 def generate_overall_results():
-    # datasets = ['Movielens1M', 'yoochoose_buys', 'goodbooks']
-    datasets = ['yoochoose_clicks']
-    cell_names = ['BasicRNNCell', 'LSTMCell', 'GRUCell', 'GRU4Rec', 'DBAM', 'LSTMCellDiversity']
-    metrics = ['precision', 'recall', 'mrr', 'diversity', 'aggregate_diversity', 'unexpectedness', 'novelty']
+    datasets = ['nowplaying']
+    # datasets = ['yoochoose_clicks', 'nowplaying']
+    # datasets = ['yoochoose_clicks', 'nowplaying', 'retailrocket']
+    # cell_names = ['BasicRNNCell', 'LSTMCell', 'GRUCell', 'GRU4Rec', 'DBAM', 'LSTMCellDiversity']
+
+    # cell_names = ['BasicRNNCell', 'LSTMCell', 'GRUCell', 'GRU4Rec', 'DBAM', 'Baseline', 'ImplicitSequenceModel']
+    cell_names = ['LSTMCellDiversity', 'BasicRNNCell', 'LSTMCell', 'GRUCell', 'GRU4Rec', 'DBAM', 'PopularityRec', 'RandomRec']
+    # cell_names = ['Baseline']
+
+    metrics = ['precision', 'recall', 'mrr', 'diversity', 'aggregate_diversity', 'unexpectedness', 'novelty', 'precision_at_one', 'recall_at_one', 'mrr_at_one']
+    # metrics = ['precision', 'recall', 'mrr', 'diversity', 'aggregate_diversity', 'unexpectedness', 'novelty']
     with open('overall_evaluation_results.csv', 'w') as csvfile:
         writer = csv.writer(csvfile)
         for dataset in datasets:
