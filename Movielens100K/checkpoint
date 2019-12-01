@@ -1,2 +1,0 @@
-model_checkpoint_path: "BasicRNNCell1.ckpt"
-all_model_checkpoint_paths: "BasicRNNCell1.ckpt"
