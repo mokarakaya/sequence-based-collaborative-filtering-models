@@ -1,0 +1,12 @@
+precision,2.173913043478261e-05
+recall,4.347826086956522e-05
+mrr,7.202873533938682e-05
+diversity,0.9999683915401194
+aggregate_diversity,22167.0
+unexpectedness,0.9998624534458759
+novelty,14.676828458881898
+herfindahl_diversity,0.98557636632047
+entropy_diversity,0.34296765649928734
+precision_at_one,0.0
+recall_at_one,0.0
+mrr_at_one,8.098272783339387e-05

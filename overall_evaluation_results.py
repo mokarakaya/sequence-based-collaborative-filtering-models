@@ -2,7 +2,7 @@ import csv
 
 
 def generate_overall_results():
-    datasets = ['nowplaying']
+    datasets = ['nowplaying', 'retailrocket']
     # datasets = ['yoochoose_clicks', 'nowplaying']
     # datasets = ['yoochoose_clicks', 'nowplaying', 'retailrocket']
     # cell_names = ['BasicRNNCell', 'LSTMCell', 'GRUCell', 'GRU4Rec', 'DBAM', 'LSTMCellDiversity']
