@@ -2,9 +2,9 @@ import csv
 
 
 def generate_overall_results():
-    datasets = ['nowplaying', 'retailrocket']
+    # datasets = ['nowplaying', 'retailrocket']
     # datasets = ['yoochoose_clicks', 'nowplaying']
-    # datasets = ['yoochoose_clicks', 'nowplaying', 'retailrocket']
+    datasets = ['yoochoose_clicks', 'nowplaying', 'retailrocket']
     # cell_names = ['BasicRNNCell', 'LSTMCell', 'GRUCell', 'GRU4Rec', 'DBAM', 'LSTMCellDiversity']
 
     # cell_names = ['BasicRNNCell', 'LSTMCell', 'GRUCell', 'GRU4Rec', 'DBAM', 'Baseline', 'ImplicitSequenceModel']
@@ -28,7 +28,7 @@ def generate_overall_results():
                     key, value = line
                     if key not in results:
                         results[key] = []
-                    results[key].append(value)
+                    results[key].append(round(float(value), 6))
             for metric in metrics:
                 results_line = [metric]
                 results_line.extend(results[metric])

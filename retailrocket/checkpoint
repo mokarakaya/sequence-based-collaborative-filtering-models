@@ -1,2 +1,2 @@
-model_checkpoint_path: "DBAM0.ckpt"
-all_model_checkpoint_paths: "DBAM0.ckpt"
+model_checkpoint_path: "GRUCell3.ckpt"
+all_model_checkpoint_paths: "GRUCell3.ckpt"

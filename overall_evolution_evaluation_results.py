@@ -5,14 +5,21 @@ import numpy as np
 
 
 def generate_overall_results():
-    # datasets = ['Movielens1M', 'yoochoose_buys', 'goodbooks']
-    datasets = ['yoochoose_clicks']
-    cell_names = ['BasicRNNCell', 'LSTMCell', 'GRUCell', 'GRU4Rec',  'DBAM', 'LSTMCellDiversity']
+    datasets = ['nowplaying', 'retailrocket']
+    # datasets = ['retailrocket']
+    # datasets = ['yoochoose_clicks']
+    # cell_names = ['LSTMCellDiversity']
+    cell_names = ['BasicRNNCell', 'LSTMCell', 'GRUCell']
+    # cell_names = ['BasicRNNCell', 'LSTMCell', 'GRUCell', 'GRU4Rec', 'DBAM', 'LSTMCellDiversity']
+    # cell_names = ['BasicRNNCell', 'BasicRNNCell', 'GRUCell']
+    # cell_names = ['Baseline']
+    # cell_names = ['BasicRNNCell']
     # metrics = ['precision', 'recall', 'mrr', 'diversity', 'aggregate_diversity', 'unexpectedness', 'novelty']
 
     for dataset in datasets:
 
         cell_results, metrics = _read_csv(cell_names, dataset)
+        print(metrics)
 
         for metric_idx, metric in enumerate(metrics):
             metric_results = np.zeros(shape=(len(cell_results[0]), len(cell_names) + 1))
