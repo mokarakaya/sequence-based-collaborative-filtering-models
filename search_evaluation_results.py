@@ -2,7 +2,7 @@ import csv
 
 
 def generate_overall_results():
-    datasets = ['retailrocket']
+    datasets = ['yoochoose_clicks']
     # datasets = ['yoochoose_clicks', 'nowplaying']
     # datasets = ['yoochoose_clicks', 'nowplaying', 'retailrocket']
     # cell_names = ['BasicRNNCell', 'LSTMCell', 'GRUCell', 'GRU4Rec', 'DBAM', 'LSTMCellDiversity']
@@ -10,7 +10,7 @@ def generate_overall_results():
     # cell_names = ['BasicRNNCell', 'LSTMCell', 'GRUCell', 'GRU4Rec', 'DBAM', 'Baseline', 'ImplicitSequenceModel']
     cell_name = 'LSTMCellDiversity'
     # cell_names = ['Baseline']
-    search_space = [2, 4, 5, 6, 8]
+    search_space = [2, 5, 8, 13, 20]
 
     metrics = ['precision', 'recall', 'mrr', 'diversity', 'aggregate_diversity', 'unexpectedness', 'novelty', 'precision_at_one', 'recall_at_one', 'mrr_at_one']
     # metrics = ['precision', 'recall', 'mrr', 'diversity', 'aggregate_diversity', 'unexpectedness', 'novelty']
