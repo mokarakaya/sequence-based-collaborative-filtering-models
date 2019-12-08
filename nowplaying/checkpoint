@@ -1,2 +1,2 @@
-model_checkpoint_path: "DBAM3.ckpt"
-all_model_checkpoint_paths: "DBAM3.ckpt"
+model_checkpoint_path: "DualLSTMCell3.ckpt"
+all_model_checkpoint_paths: "DualLSTMCell3.ckpt"
