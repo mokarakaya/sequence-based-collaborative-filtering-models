@@ -5,11 +5,11 @@ import numpy as np
 
 
 def generate_overall_results():
-    datasets = ['nowplaying', 'retailrocket']
+    datasets = ['yoochoose_clicks', 'nowplaying', 'retailrocket']
     # datasets = ['retailrocket']
     # datasets = ['yoochoose_clicks']
     # cell_names = ['LSTMCellDiversity']
-    cell_names = ['BasicRNNCell', 'LSTMCell', 'GRUCell']
+    cell_names = ['LSTMCellDiversity', 'BasicRNNCell', 'LSTMCell', 'GRUCell', 'GRU4Rec', 'DBAM']
     # cell_names = ['BasicRNNCell', 'LSTMCell', 'GRUCell', 'GRU4Rec', 'DBAM', 'LSTMCellDiversity']
     # cell_names = ['BasicRNNCell', 'BasicRNNCell', 'GRUCell']
     # cell_names = ['Baseline']
