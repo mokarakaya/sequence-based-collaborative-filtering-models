@@ -1,6 +1,7 @@
 *backup*/
 Movielens100K/
 *DualLSTMCell*
+keep/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
