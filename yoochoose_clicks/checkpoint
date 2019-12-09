@@ -1,2 +1,2 @@
-model_checkpoint_path: "DualLSTMCell0.ckpt"
-all_model_checkpoint_paths: "DualLSTMCell0.ckpt"
+model_checkpoint_path: "GRUCell0.ckpt"
+all_model_checkpoint_paths: "GRUCell0.ckpt"
